@@ -1,1 +1,1 @@
-# teknik-informatika-s1
+# Teknik Informatika Strata 1
