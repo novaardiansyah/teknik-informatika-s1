@@ -1,67 +1,96 @@
 #include <iostream>
 #include <string>
-
 using namespace std;
 
-struct Mahasiswa
-{
-  char NIM[30];
-  char Nama[25];
-  int NilaiTugas;
-  int NilaiUTS;
-  int NilaiUAS;
-  int NilaiAkhir;
-  string NilaiHuruf;
+struct TANGGAL {
+  int tanggal;
+  int bulan;
+  int tahun;
 };
 
-int main()
-{
+struct TINGGAL {
+  string jalan;
+  string kode_pos;
+  string kota;
+};
+
+struct BIODATA {
+  string nip;
+  string nama;
+  string alamat;
+  string jabatan;
+  string agama;
+  TANGGAL tanggal_lahir;
+  TANGGAL tanggal_mulai_kerja;
+  TINGGAL unit_kerja;
+};
+
+int main() {
+  const int MAX_PEGAWAI = 2;
+  BIODATA pegawai[MAX_PEGAWAI];
+
   cout << "Nama \t: Nova Ardiansyah\n";
   cout << "NIM \t: 211011401309\n";
   cout << "=========================\n\n";
+  
+  int n;
+  cout << "Masukkan jumlah pegawai: ";
+  cin >> n;
 
-  Mahasiswa Mhs;
+  for (int i = 0; i < n; i++) {
+    cout << "\nBiodata Pegawai " << i+1 << ":\n";
+    
+    cout << "NIP: ";
+    cin >> pegawai[i].nip;
+    
+    cout << "Nama: ";
+    cin >> pegawai[i].nama;
 
-  cout << "Masukkan NIM \t\t\t: ";
-  cin.getline(Mhs.NIM, 30);
+    cout << "Alamat: ";
+    cin.ignore();
+    getline(cin, pegawai[i].alamat);
 
-  cout << "Masukkan Nama \t\t\t: ";
-  cin.getline(Mhs.Nama, 25);
+    cout << "Jabatan: ";
+    getline(cin, pegawai[i].jabatan);
 
-  cout << "Masukkan Nilai Tugas \t: ";
-  cin >> Mhs.NilaiTugas;
+    cout << "Agama: ";
+    getline(cin, pegawai[i].agama);
 
-  cout << "Masukkan Nilai UTS \t\t: ";
-  cin >> Mhs.NilaiUTS;
+    cout << "Tanggal Lahir (dd mm yyyy): ";
+    cin >> pegawai[i].tanggal_lahir.tanggal >> pegawai[i].tanggal_lahir.bulan >> pegawai[i].tanggal_lahir.tahun;
+    
+    cout << "Tanggal Mulai Kerja (dd mm yyyy): ";
+    cin >> pegawai[i].tanggal_mulai_kerja.tanggal >> pegawai[i].tanggal_mulai_kerja.bulan >> pegawai[i].tanggal_mulai_kerja.tahun;
 
-  cout << "Masukkan Nilai UAS \t\t: ";
-  cin >> Mhs.NilaiUAS;
+    cout << "Unit Kerja:\n";
+    cout << "Jalan: ";
 
-  cout << "=========================\n\n";
+    cin.ignore();
+    getline(cin, pegawai[i].unit_kerja.jalan);
 
-  Mhs.NilaiAkhir = (Mhs.NilaiTugas * 0.2) + (Mhs.NilaiUTS * 0.35) + (Mhs.NilaiUAS * 0.45);
+    cout << "Kode Pos: ";
+    getline(cin, pegawai[i].unit_kerja.kode_pos);
 
-  if (Mhs.NilaiAkhir > 85 && Mhs.NilaiAkhir <= 100) {
-    Mhs.NilaiHuruf = "A";
-  } else if (Mhs.NilaiAkhir > 70 && Mhs.NilaiAkhir <= 85) {
-    Mhs.NilaiHuruf = "B";
-  } else if (Mhs.NilaiAkhir > 55 && Mhs.NilaiAkhir <= 70) {
-    Mhs.NilaiHuruf = "C";
-  } else if (Mhs.NilaiAkhir > 40 && Mhs.NilaiAkhir <= 55) {
-    Mhs.NilaiHuruf = "D";
-  } else if (Mhs.NilaiAkhir <= 40) {
-    Mhs.NilaiHuruf = "E";
+    cout << "Kota: ";
+    getline(cin, pegawai[i].unit_kerja.kota);
   }
 
-  cout << "Berikut adalah hasil perhitungan nilai akhir Anda :\n\n";
-  
-  cout << "NIM \t\t\t: " << Mhs.NIM << endl;
-  cout << "Nama \t\t\t: " << Mhs.Nama << endl;
-  cout << "Nilai Tugas \t: " << Mhs.NilaiTugas << endl;
-  cout << "Nilai UTS \t\t: " << Mhs.NilaiUTS << endl;
-  cout << "Nilai UAS \t\t: " << Mhs.NilaiUAS << endl;
-  cout << "Nilai Akhir \t: " << Mhs.NilaiAkhir << endl;
-  cout << "Peringkat \t\t: " << Mhs.NilaiHuruf << endl;
+  cout << "\nData Pegawai:\n";
+  for (int i = 0; i < n; i++) {
+    cout << "\nBiodata Pegawai " << i+1 << ":\n";
+    cout << "NIP: " << pegawai[i].nip << endl;
+    cout << "Nama: " << pegawai[i].nama << endl;
+    cout << "Alamat: " << pegawai[i].alamat << endl;
+    cout << "Jabatan: " << pegawai[i].jabatan << endl;
+    cout << "Agama: " << pegawai[i].agama << endl;
+    cout << "Tanggal Lahir: " << pegawai[i].tanggal_lahir.tanggal << "/" << pegawai[i].tanggal_lahir.bulan << "/" << pegawai[i].tanggal_lahir.tahun << endl;
+    cout << "Tanggal Mulai Kerja: " << pegawai[i].tanggal_mulai_kerja.tanggal << "/" << pegawai[i].tanggal_mulai_kerja.bulan << "/" << pegawai[i].tanggal_mulai_kerja.tahun << endl;
+
+    cout << "Unit Kerja:\n";
+    cout << "Jalan: " << pegawai[i].unit_kerja.jalan << endl;
+    cout << "Kode Pos: " << pegawai[i].unit_kerja.kode_pos << endl;
+    cout << "Kota: " << pegawai[i].unit_kerja.kota << endl;
+  }
 
   return 0;
 }
