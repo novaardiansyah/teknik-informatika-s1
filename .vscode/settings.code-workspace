@@ -18,5 +18,6 @@
     "breadcrumbs.symbolSortOrder": "position",
     "terminal.integrated.fontSize": 12,
     "editor.fontFamily": "Hack Regular, Source Code Pro, Consolas, 'Courier New', monospace",
+    "java.debug.settings.onBuildFailureProceed": true,
   }
 }
