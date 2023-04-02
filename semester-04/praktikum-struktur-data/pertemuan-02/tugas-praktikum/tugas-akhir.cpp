@@ -1,10 +1,11 @@
 #include <iostream>
-
 using namespace std;
+
 int main()
 {
   cout << "Nama \t: Nova Ardiansyah\n";
-  cout << "NIM \t: 211011401309\n\n";
+  cout << "NIM \t: 211011401309\n";
+  cout << "=========================\n\n";
   
   int ordo = 3;
   int matriks1[ordo][ordo] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};

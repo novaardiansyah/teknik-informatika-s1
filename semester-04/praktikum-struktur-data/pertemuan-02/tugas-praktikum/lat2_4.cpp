@@ -1,10 +1,11 @@
 #include <iostream>
-
 using namespace std;
+
 int main()
 {
   cout << "Nama \t: Nova Ardiansyah\n";
-  cout << "NIM \t: 211011401309\n\n";
+  cout << "NIM \t: 211011401309\n";
+  cout << "=========================\n\n";
   
   int Nilai[5];
   int Posisi[5];

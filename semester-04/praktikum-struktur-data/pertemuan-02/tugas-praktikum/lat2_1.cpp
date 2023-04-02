@@ -1,16 +1,18 @@
 #include <iostream>
-
 using namespace std;
+
 int main()
 {
   cout << "Nama \t: Nova Ardiansyah\n";
   cout << "NIM \t: 211011401309\n";
+  cout << "=========================\n\n";
 
   int Nilai[10] = {8, 12, 20, 15, 7, 5, 6, 4, 32, 3};
   int i, jumlah = 0;
   float Rata_Rata;
 
   cout << "\nDeretan Bilangan : ";
+  
   // * Menghitung jumlah
   for (i = 0; i < 10; i++)
   {
