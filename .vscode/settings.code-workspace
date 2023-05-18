@@ -9,15 +9,11 @@
       "statusBar.background": "#0E3EDA"
     },
     "files.eol": "\r\n",
-    "window.zoomLevel": 0.3,
-    "editor.fontSize": 12,
+    "window.zoomLevel": 0.5,
+    "editor.fontSize": 10.5,
     "editor.lineHeight": 25,
-    "breadcrumbs.enabled": true,
-    "breadcrumbs.filePath": "on",
-    "breadcrumbs.symbolPath": "off",
-    "breadcrumbs.symbolSortOrder": "position",
-    "terminal.integrated.fontSize": 12,
     "editor.fontFamily": "Hack Regular, Source Code Pro, Consolas, 'Courier New', monospace",
-    "java.debug.settings.onBuildFailureProceed": true,
+    "intelephense.diagnostics.undefinedProperties": false,
+    "editor.tabSize": 2
   }
 }
