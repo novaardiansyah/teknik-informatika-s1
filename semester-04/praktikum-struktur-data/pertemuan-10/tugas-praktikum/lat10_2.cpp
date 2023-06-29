@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 struct node {
@@ -37,6 +36,8 @@ int main()
   cout << "Masukkan huruf : ";
   cin >> huruf;
   Sisip_Depan(L, huruf);
+
+  cout << "Masukkan huruf : ";
   cin >> huruf;
   Sisip_Depan(L, huruf);
   Cetak_Maju(L);
@@ -74,6 +75,8 @@ int main()
 
   cout << "Masukkan huruf : ";
   cin >> huruf;
+  cout << "Masukkan huruf sebelum huruf " << huruf << " : ";
+  cin >> huruf2;
   Sisip_Tengah2(L, huruf, huruf2);
 
   Cetak_Maju(L);
